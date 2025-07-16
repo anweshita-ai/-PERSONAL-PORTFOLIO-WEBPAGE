@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serafina's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #88699d;       
+      --accent-color: #f7cfe3;     
+      --bg-color: #fff5fa;         
+      --text-color: #333;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'Quicksand', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background: var(--main-color);
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    h2 {
+      color: var(--main-color);
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .home {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .home h1 {
+      font-size: 2.8rem;
+      color: var(--main-color);
+      font-family: var(--heading-font);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .home p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .skills {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.04);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: var(--accent-color);
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #333;
+      transition: 0.3s;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .skill:hover {
+      background: var(--main-color);
+      color: #fff;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 5px solid var(--main-color);
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      padding: 12px;
+      background: var(--main-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #b185d1;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      margin-right: 15px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+
+    .socials a:hover {
+      color: var(--accent-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--main-color);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      color: #333;
+      border: none;
+      padding: 12px 16px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      .skills-list {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div><strong>Serafina's Portfolio</strong></div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <h1>Hello, I’m Serafina 👩‍💻</h1>
+    <p>A passionate front-end developer crafting elegant and responsive websites that bring ideas to life. I believe code is poetry — structured, expressive, and meant to inspire.</p>
+    <p>Welcome to my creative space where pixels meet purpose.</p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hi! I’m Serafina — a self-driven, creative front-end developer with a keen eye for detail and a heart full of ideas. My coding journey began with curiosity and quickly grew into a deep passion for bringing digital designs to life.</p>
+    <p>With a background in visual arts and a strong understanding of user experience, I build interfaces that are not just functional but also joyful to interact with. I love writing clean, semantic code and translating mockups into beautiful websites.</p>
+    <p>When I’m not designing layouts or fine-tuning pixels, you’ll find me journaling, doodling UI concepts, exploring cozy cafes, or curating aesthetic boards on Pinterest.</p>
+    <p>My mission is simple: To create web experiences that feel as delightful as they look — intuitive, beautiful, and human-centered.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Figma</div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Chic Portfolio</h3>
+      <p>This very portfolio website was handcrafted using pure HTML and CSS, showcasing my design sensibilities and attention to detail. Every section is responsive, minimal, and intentionally styled to reflect who I am as both a developer and designer.</p>
+      <p><strong>Tech Stack:</strong> HTML5, CSS3 | <strong>Goal:</strong> Clean and creative personal branding.</p>
+    </div>
+
+    <div class="project">
+      <h3>Mindful Journal App</h3>
+      <p>A cozy, mobile-friendly journal interface that allows users to reflect on their day, track moods, and write freely. The UI uses calming tones and intuitive input areas to promote self-expression and daily mindfulness.</p>
+      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript | <strong>Goal:</strong> Encourage digital well-being.</p>
+    </div>
+
+    <div class="project">
+      <h3>Bloom To-Do List</h3>
+      <p>An aesthetic productivity app with animated task cards, pastel UI themes, and a gentle reminder system. Designed for creatives who want to organize without stress.</p>
+      <p><strong>Tech Stack:</strong> JavaScript, LocalStorage | <strong>Goal:</strong> Friendly task management experience.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="socials">
+      <p style="margin-top:20px;">Let’s connect, collaborate, or just share coffee & code ☕</p>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with 💖, pastel dreams, and plenty of coffee | © 2025 Serafina</p>
+  </footer>
+
+  <button id="topBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+  <script>
+    const btn = document.getElementById("topBtn");
+    window.onscroll = () => {
+      btn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+  </script>
+
+</body>
+</html>
