@@ -87,3 +87,5 @@ The site is visually appealing, employs a soft pastel color scheme, and includes
 ### **Conclusion**
 
 This portfolio project beautifully combines design and development. It displays proficiency in HTML and CSS, understanding of UI/UX principles, and the ability to create responsive, elegant websites. With a polished visual identity and well-organized content, this site reflects the developer's creativity, technical skills, and attention to detail, making it a solid resource for professional growth.
+
+![Image](https://github.com/user-attachments/assets/f6b5b683-7a1c-41b7-a713-4b787488d536)
